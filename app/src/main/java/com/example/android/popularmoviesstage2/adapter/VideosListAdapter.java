@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.android.popularmoviesstage2.R;
 import com.example.android.popularmoviesstage2.model.MovieVideo;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -56,7 +56,7 @@ public class VideosListAdapter extends RecyclerView.Adapter<VideosListAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        Glide.with(context)
+        Picasso.with(context)
                 .load(String.format(YOUTUBE_THUMBNAIL_URL, videos.get(position).getKey()))
                 .placeholder(R.drawable.image_placeholder)
                 .into(holder.imageView);

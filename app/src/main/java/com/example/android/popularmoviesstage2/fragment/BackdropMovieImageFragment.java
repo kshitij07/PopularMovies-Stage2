@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.example.android.popularmoviesstage2.R;
 import com.example.android.popularmoviesstage2.helper.Constants;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by Kshitij on 19-05-2018.
@@ -44,7 +44,7 @@ public class BackdropMovieImageFragment extends Fragment {
         imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 
-        Glide.with(getContext())
+        Picasso.with(getContext())
                 .load(BACKDROP_IMAGE_URL + filePath)
                 .placeholder(R.drawable.image_placeholder)
                 .into(imageView);

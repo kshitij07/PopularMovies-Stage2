@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,7 +40,6 @@ public class AboutMovieFragment extends Fragment {
     private BackdropMovieImagesAdapter adapter;
 
     private ViewPager viewPager;
-    private CircleIndicator indicator;
 
     private String tagLine;
     private String overview;
@@ -85,8 +83,6 @@ public class AboutMovieFragment extends Fragment {
         }
         viewPager = (ViewPager) view.findViewById(R.id.view_pager_movie_images);
         viewPager.setAdapter(adapter);
-        indicator = (CircleIndicator) view.findViewById(R.id.indicator_view_pager);
-        indicator.setVisibility(View.INVISIBLE);
 
         TextView textViewTagLine = (TextView) view.findViewById(R.id.text_view_tag_line);
         if (tagLine != null && tagLine.length() > 0) {
@@ -154,9 +150,6 @@ public class AboutMovieFragment extends Fragment {
     private void setupViewPager() {
         adapter.addMovieImages(movieImages);
         adapter.notifyDataSetChanged();
-
-        indicator.setViewPager(viewPager);
-        indicator.setVisibility(View.VISIBLE);
     }
 
     @Override
