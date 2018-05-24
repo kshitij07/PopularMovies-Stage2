@@ -21,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DecodeFormat;
 import com.example.android.popularmoviesstage2.MoviesActivity;
 import com.example.android.popularmoviesstage2.R;
 import com.example.android.popularmoviesstage2.adapter.VideosListAdapter;
@@ -34,7 +36,6 @@ import com.example.android.popularmoviesstage2.model.MovieReviews;
 import com.example.android.popularmoviesstage2.model.MovieVideo;
 import com.example.android.popularmoviesstage2.model.MovieVideos;
 import com.example.android.popularmoviesstage2.model.MoviesList;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -139,14 +140,14 @@ public class MovieDetailFragment extends Fragment
         ImageView backdropImage = (ImageView) view.findViewById(R.id.image_view_backdrop);
         ImageView posterImage = (ImageView) view.findViewById(R.id.image_view_poster);
 
-        Picasso.with(view.getContext())
+        Glide.with(view.getContext())
                 .load(BACKDROP_IMAGE_URL + movie.getBackdropPath())
-//                .asBitmap()
-//                .format(DecodeFormat.PREFER_ARGB_8888)
+                .asBitmap()
+                .format(DecodeFormat.PREFER_ARGB_8888)
                 .placeholder(R.drawable.image_placeholder)
                 .into(backdropImage);
 
-        Picasso.with(view.getContext())
+        Glide.with(view.getContext())
                 .load(POSTER_IMAGE_URL + movie.getPosterPath())
                 .placeholder(R.drawable.image_placeholder)
                 .into(posterImage);

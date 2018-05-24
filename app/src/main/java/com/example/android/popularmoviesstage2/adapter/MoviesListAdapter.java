@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.android.popularmoviesstage2.R;
 import com.example.android.popularmoviesstage2.model.Movie;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -51,7 +51,7 @@ public class MoviesListAdapter extends RecyclerView.Adapter<MoviesListAdapter.Vi
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        Picasso.with(context)
+        Glide.with(context)
                 .load(BASE_URL + movies.get(position).getPosterPath())
                 .placeholder(R.drawable.image_placeholder)
                 .into(holder.poster);

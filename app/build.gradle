@@ -9,7 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "TMDB_API_KEY", "\"YOUR_TMDB_API_KEY\""
+        buildConfigField "String", "TMDB_API_KEY", "\"c7d5df693891f38c50f856a004d08690\""
     }
     buildTypes {
         release {
@@ -36,5 +36,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.1'
     compile 'com.squareup.retrofit2:converter-gson:2.0.1'
 
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    compile 'me.relex:circleindicator:1.2.1@aar'
 }
